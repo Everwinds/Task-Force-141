@@ -2,109 +2,74 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
     [Range(1f,10f)]
     public float speed = 2f;
 
     private Rigidbody2D rb2d;
+    private Animator animator;
     private SpriteRenderer spriteRenderer;
-    
-    private Vector2 moveDirection;
+    private Vector3 moveDir = Vector3.zero;
     private bool movable = false;
-
-    private Vector2[] horizontals = {new Vector2(1, .57735f), new Vector2(1, -.57735f), new Vector2(-1, -.57735f), new Vector2(-1, .57735f)};
-    public int currentLayer;
+    private int directionIndex = 1;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        currentLayer = 0;
     }
 
     private void Update()
     {
+        if (PauseMenu.Instance.paused)
+        {
+            animator.speed = 0;
+            return;
+        }
         if (Input.GetMouseButton(0))
         {
-            movable = true;
-            moveDirection = GetMoveDirection().normalized;
+            if (!movable) movable = true;
+            moveDir = Input.mousePosition-Camera.main.WorldToScreenPoint(transform.position);
+            //Debug.DrawLine(transform.position, transform.position + moveDir.normalized, Color.red, 0.1f);
         }
         else
         {
-            movable = false;
-        }
-
-        int climingDir = Climing();
-        if (climingDir != 0 && Input.GetMouseButtonDown(1))
-        {
-            print(climingDir);
-            GoUp(climingDir);
+            if (movable) movable = false;
+            moveDir = Vector3.zero;
+            animator.speed = 0;
         }
     }
 
     private void FixedUpdate()
     {
-        if(movable)
+        if (PauseMenu.Instance.paused) return;
+        if (movable)
         {
-            rb2d.velocity = moveDirection * speed;
-        }
-    }
-
-    private Vector2 GetMoveDirection()
-    {
-        Vector2 moveDir = Vector2.zero;
-        //get mouse pointing direction
-        Vector2 mouseDir = Input.mousePosition-Camera.main.WorldToScreenPoint(transform.position);
-
-        //align to grids, avoid being too close
-        if (mouseDir.magnitude > 30) 
-        {
-            if (mouseDir.x >= 0) moveDir.x = 1;
-            else moveDir.x = -1;
-            if (mouseDir.y >= 0) moveDir.y = .57735f;
-            else moveDir.y = -.57735f;
-        }
-
-        spriteRenderer.flipX = moveDir.x > 0;
-        return moveDir;
-    }
-
-    private int Climing() 
-    {
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, moveDirection, .4f);
-        Debug.DrawLine(transform.position, (Vector2)transform.position + moveDirection, Color.blue);
-        foreach (RaycastHit2D hit in hits)
-        {
-            if (hit.collider.CompareTag("Handle"))
+            rb2d.velocity = moveDir.normalized * speed;
+            animator.speed = 1;
+            int dir = 1;
+            if(moveDir.y>0)
             {
-                return hit.transform.position.y > transform.position.y ? 1 : -1;
+                if (moveDir.x > 0) dir = 1;
+                else dir = 2;
+            }
+            else
+            {
+                if (moveDir.x < 0) dir = 3;
+                else dir = 4;
+            }
+            if(directionIndex!=dir)
+            {
+                directionIndex = dir;
+                if (dir == 1) animator.SetTrigger("UpRight");
+                else if (dir == 2) animator.SetTrigger("UpLeft");
+                else if (dir == 3) animator.SetTrigger("DownLeft");
+                else if (dir == 4) animator.SetTrigger("DownRight");
+
             }
         }
-        return 0;
-    }
-
-    private void GoUp(int up)
-    {
-        GameObject[] currentLayerGrounds = GameObject.FindGameObjectsWithTag(currentLayer.ToString());
-        foreach (GameObject ground in currentLayerGrounds)
-        {
-            //change to wall
-            ground.layer = 9;
-        }
-
-        currentLayer += up;
-
-        GameObject[] currentLayerWalls = GameObject.FindGameObjectsWithTag(currentLayer.ToString());
-        foreach (GameObject wall in currentLayerWalls)
-        {
-            //change to ground
-            wall.layer = 10;
-        }
-
-        //animation 
-        transform.position += Vector3.up * 2.1f * up;
-        transform.position += (Vector3)moveDirection / 2;
     }
 }
