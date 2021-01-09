@@ -7,7 +7,7 @@ public class Hook : MonoBehaviour
     SpriteRenderer rend;
     public Sprite[] sprites = new Sprite[3];
     Vector3 mousePos;
-    bool aiming = false;
+    bool clicked = false;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class Hook : MonoBehaviour
         if (col != null && col.gameObject == this.gameObject)
         {
             rend.sprite = sprites[1];
-            aiming = true; 
+            clicked = true; 
         }
         else
         {
@@ -31,14 +31,14 @@ public class Hook : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            if (aiming){
+            if (clicked){
                 Debug.DrawRay(transform.position, transform.position - mousePos, Color.yellow);
             }
         } 
 
-        if (Input.GetMouseButtonUp(1) && aiming)
+        if (Input.GetMouseButtonUp(1) && clicked)
         {
-            aiming = false;
+            clicked = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().AddForce((transform.position - mousePos)*1000);
         }
     }

@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         rb2d.velocity = moveDir * speed;
         animator.speed = 1;
         int dir = 1;
-        if(moveDir.y>0)
+        if(moveDir.y > 0)
         {
             if (moveDir.x > 0) dir = 1;
             else dir = 2;
@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             if (moveDir.x < 0) dir = 3;
             else dir = 4;
         }
-        if(directionIndex!=dir)
+        if(directionIndex != dir)
         {
             directionIndex = dir;
             switch (dir)
