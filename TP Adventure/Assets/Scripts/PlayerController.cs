@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
         GameObject[] currentLayerGrounds = GameObject.FindGameObjectsWithTag(currentLayer.ToString());
         foreach (GameObject ground in currentLayerGrounds)
         {
+            //change to wall
             ground.layer = 9;
         }
 
@@ -98,6 +99,7 @@ public class PlayerController : MonoBehaviour
         GameObject[] currentLayerWalls = GameObject.FindGameObjectsWithTag(currentLayer.ToString());
         foreach (GameObject wall in currentLayerWalls)
         {
+            //change to ground
             wall.layer = 10;
         }
 
