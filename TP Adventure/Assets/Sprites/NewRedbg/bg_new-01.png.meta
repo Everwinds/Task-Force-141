@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: b90148bb91c5aba4f97c51d791be5978
+guid: efc835f50c96c6140931ce6019a28743
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 459413642663151231
-    second: cesuo_0
-  - first:
-      213: -2388022726499093645
-    second: cesuo_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -46,12 +40,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 512
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,49 +97,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: cesuo_0
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 1150
-        height: 2100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f76c7ef164a206600800000000000000
-      internalID: 459413642663151231
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cesuo_1
-      rect:
-        serializedVersion: 2
-        x: 2150
-        y: 0
-        width: 1150
-        height: 2100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37336778bf90cded0800000000000000
-      internalID: -2388022726499093645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
