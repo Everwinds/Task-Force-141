@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class PauseMenu : MonoBehaviour
@@ -12,11 +13,13 @@ public class PauseMenu : MonoBehaviour
     public GameObject volumeText;
     public GameObject volumeSlider;
     public GameObject quitButton;
-    public float normalHeight = 0;
-    public float startHeight = -0.5f;
+    public CinemachineVirtualCamera vCam;
+    public Transform focusPoint;
+    [HideInInspector]
     public bool paused = false;
 
     private CanvasGroup canvasGroup;
+    private Transform previousFocus;
     private bool fading = false;
 
     private void Awake()
@@ -48,6 +51,8 @@ public class PauseMenu : MonoBehaviour
 
     IEnumerator FadeIn()
     {
+        previousFocus = vCam.Follow;
+        vCam.Follow = focusPoint;
         fading = true;
         LeanTween.moveLocalZ(titleTetx, 0, 0.6f);
         yield return new WaitForSeconds(0.1f);
@@ -65,6 +70,7 @@ public class PauseMenu : MonoBehaviour
 
     IEnumerator FadeOut()
     {
+        vCam.Follow = previousFocus;
         fading = true;
         LeanTween.alphaCanvas(canvasGroup, 0f, 0.8f);
         yield return new WaitForSeconds(1.2f);
