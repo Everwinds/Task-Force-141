@@ -3854,7 +3854,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  currentLayer: 0
 --- !u!58 &731538416
 CircleCollider2D:
   m_ObjectHideFlags: 0
