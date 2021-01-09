@@ -4,12 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - 0
   - 1
-  - 2
-  - Wall
-  - Ground
   - Handle
+  - 0
   layers:
   - Default
   - TransparentFX
@@ -20,8 +17,8 @@ TagManager:
   - 
   - 
   - Player
-  - Ground
   - Wall
+  - Ground
   - 
   - 
   - 
