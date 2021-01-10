@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (GameStateManager.Instance.die) return;
         if (PauseMenu.Instance.paused)
         {
             animator.speed = 0;
@@ -50,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (PauseMenu.Instance.paused) 
+        if (PauseMenu.Instance.paused || GameStateManager.Instance.die) 
             return;
         if (movable)
             rb2d.velocity = moveDir * speed;
