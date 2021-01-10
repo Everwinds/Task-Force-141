@@ -35,4 +35,9 @@ public class StartMenu : MonoBehaviour
         curtain.GetComponent<Image>().color = new Color(0, 0, 0, 1f);
         LeanTween.alpha(curtain.GetComponent<RectTransform>(), 0f, 1f);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
