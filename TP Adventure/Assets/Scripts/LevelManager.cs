@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour
         timer.ResetTimer();
         // disable player control
         LeanTween.move(levelReference, levelAnchorNex, 3f);
-        player.GetComponent<PlayerController>().enabled = false;
+        player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<Animator>().speed = 0;
         vCam.Follow = null;
         player.transform.SetParent(levelReference.transform);
@@ -94,7 +94,7 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         player.transform.SetParent(null);
         vCam.Follow = player.transform;
-        player.GetComponent<PlayerController>().enabled = true;
+        player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<Animator>().speed = 1;
         timer.Resume();
     }
