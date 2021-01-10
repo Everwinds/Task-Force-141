@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public int currentLayer = 0;
 
     public GameObject roll;
-    public TrailRenderer trail;
+    TrailRenderer trail;
     Rigidbody2D rb2d;
     Animator animator;
     Vector3 moveDir = Vector3.zero;
