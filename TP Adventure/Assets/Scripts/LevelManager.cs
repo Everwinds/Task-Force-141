@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        levelCount = SceneManager.sceneCountInBuildSettings;
+        levelCount = SceneManager.sceneCountInBuildSettings-3;
         LoadScene(curLevel+1);
     }
     
@@ -40,6 +40,7 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator NextLevel()
     {
+        if (curLevel == 6) ToWinScene();
         StartCoroutine(transitionText.FadeIn(curLevel));
         timer.Pause();
         // disable player control
@@ -160,5 +161,10 @@ public class LevelManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    private void ToWinScene()
+    {
+        SceneManager.LoadSceneAsync(8);
     }
 }
