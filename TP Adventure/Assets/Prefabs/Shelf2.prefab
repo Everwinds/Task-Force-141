@@ -28,7 +28,6 @@ Transform:
   m_LocalPosition: {x: 0.768, y: 0.741, z: 1.8153095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3833153972328988549}
   - {fileID: 7627038106516563603}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -112,7 +111,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 616342597066202178}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &4417611241795816038
 PolygonCollider2D:
@@ -144,56 +143,3 @@ PolygonCollider2D:
       - {x: 0.032946467, y: -0.9409225}
       - {x: 0.9255843, y: -0.37470418}
       - {x: 0.92692804, y: -0.3709508}
---- !u!1 &4794993814953085415
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3833153972328988549}
-  - component: {fileID: 103707315614263033}
-  m_Layer: 10
-  m_Name: Top
-  m_TagString: 1
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3833153972328988549
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4794993814953085415}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.19, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 616342597066202178}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &103707315614263033
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4794993814953085415}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.089695334, y: -0.17846048}
-  - {x: 0.07294142, y: -0.21447027}
-  - {x: -1.603728, y: 0.7811352}
-  - {x: -0.7792832, y: 1.2688159}
-  - {x: 0.93768704, y: 0.2551781}
-  - {x: 0.08100629, y: -0.19397867}
