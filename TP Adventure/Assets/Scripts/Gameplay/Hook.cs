@@ -5,9 +5,9 @@ using UnityEngine;
 public class Hook : MonoBehaviour
 {
     SpriteRenderer rend;
-    public Sprite[] sprites = new Sprite[3];
-    Vector3 mousePos;
-    bool clicked = false;
+    Vector2 mousePos;
+    public Sprite[] sprites = new Sprite[2];
+    public bool hovering;
 
     void Start()
     {
@@ -15,31 +15,13 @@ public class Hook : MonoBehaviour
        rend.sprite = sprites[0];
     }
 
-    void Update()
+    public void OnHover()
     {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Collider2D col = Physics2D.OverlapPoint(mousePos);
-        if (col != null && col.gameObject == this.gameObject)
-        {
-            rend.sprite = sprites[1];
-            clicked = true; 
-        }
-        else
-        {
-            rend.sprite = sprites[0];
-        }
+        rend.sprite = sprites[1];
+    }
 
-        if (Input.GetMouseButton(1))
-        {
-            if (clicked){
-                Debug.DrawRay(transform.position, transform.position - mousePos, Color.yellow);
-            }
-        } 
-
-        if (Input.GetMouseButtonUp(1) && clicked)
-        {
-            clicked = false;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().AddForce((transform.position - mousePos)*1000);
-        }
+    public void OnExit()
+    {
+        rend.sprite = sprites[0];
     }
 }
