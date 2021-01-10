@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -533,7 +533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 502975817}
   - component: {fileID: 502975818}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GameBound (1)
   m_TagString: 1
   m_Icon: {fileID: 0}
@@ -2878,7 +2878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 739596691}
   - component: {fileID: 739596692}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: GameBound
   m_TagString: 0
   m_Icon: {fileID: 0}
@@ -4750,7 +4750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1315461676}
   - component: {fileID: 1315461677}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GameBound (2)
   m_TagString: 1
   m_Icon: {fileID: 0}
@@ -4802,7 +4802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1322904322}
   - component: {fileID: 1322904323}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GameBound (3)
   m_TagString: 1
   m_Icon: {fileID: 0}
