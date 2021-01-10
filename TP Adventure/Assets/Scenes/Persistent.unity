@@ -618,11 +618,12 @@ MonoBehaviour:
   titleTetx: {fileID: 1406400798}
   continueButton: {fileID: 1826257146}
   volumeText: {fileID: 1367749939}
-  volumeSlider: {fileID: 1419079054}
+  volumeSlider: {fileID: 1419079056}
   quitButton: {fileID: 768836284}
   vCam: {fileID: 437164410}
   focusPoint: {fileID: 1057869832}
   paused: 0
+  volume: 1
 --- !u!225 &435655975
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1251,8 +1252,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -806.2, y: 471.5}
-  m_SizeDelta: {x: 231.03522, y: 81.24036}
+  m_AnchoredPosition: {x: -723.56, y: 471.5}
+  m_SizeDelta: {x: 396.3169, y: 81.24036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &665414233
 MonoBehaviour:
@@ -2329,7 +2330,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

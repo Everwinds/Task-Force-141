@@ -127,6 +127,7 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.UnloadSceneAsync(curLevel + 1);
         SceneManager.LoadSceneAsync(curLevel+1, LoadSceneMode.Additive);
+        levelReference = GameObject.FindGameObjectWithTag("Level Reference");
         GetComponent<GameStateManager>().ResetGameState();
         timer.ResetTimer();
         playerTrail.enabled = false;

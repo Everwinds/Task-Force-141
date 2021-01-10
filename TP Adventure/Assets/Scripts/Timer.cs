@@ -26,9 +26,13 @@ public class Timer : MonoBehaviour
             reached = true;
             timer = 0;
             text.text = "Time up!";
+            GameStateManager.Instance.Die();
         }
-        text.text = timer.ToString("F1") + "s";
-        timer -= Time.deltaTime;
+        else
+        {
+            text.text = timer.ToString("F1") + "s";
+            timer -= Time.deltaTime;
+        }
     }
 
     public void Pause()
