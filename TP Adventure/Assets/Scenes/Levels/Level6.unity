@@ -831,8 +831,9 @@ Transform:
   - {fileID: 368456403}
   - {fileID: 357474803}
   - {fileID: 857062894}
+  - {fileID: 1141649165}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &276801514 stripped
 Transform:
@@ -15251,8 +15252,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 275112234}
     m_Modifications:
+    - target: {fileID: 610706404354821504, guid: 75dc558d9a9ecaf4fa943996c6d9e20b,
+        type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 610706404354821507, guid: 75dc558d9a9ecaf4fa943996c6d9e20b,
         type: 3}
       propertyPath: m_Name
@@ -15261,17 +15267,17 @@ PrefabInstance:
     - target: {fileID: 610706404354821511, guid: 75dc558d9a9ecaf4fa943996c6d9e20b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 610706404354821511, guid: 75dc558d9a9ecaf4fa943996c6d9e20b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.19
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 610706404354821511, guid: 75dc558d9a9ecaf4fa943996c6d9e20b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.39
+      value: -10.38
       objectReference: {fileID: 0}
     - target: {fileID: 610706404354821511, guid: 75dc558d9a9ecaf4fa943996c6d9e20b,
         type: 3}
@@ -15315,6 +15321,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75dc558d9a9ecaf4fa943996c6d9e20b, type: 3}
+--- !u!4 &1141649165 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 610706404354821511, guid: 75dc558d9a9ecaf4fa943996c6d9e20b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1141649164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1237099866 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
