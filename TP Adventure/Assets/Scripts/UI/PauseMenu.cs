@@ -21,6 +21,8 @@ public class PauseMenu : MonoBehaviour
     private CanvasGroup canvasGroup;
     private Transform previousFocus;
     private bool fading = false;
+    private bool talking = false;
+    private bool shownMenu = false;
 
     private void Awake()
     {
@@ -35,17 +37,39 @@ public class PauseMenu : MonoBehaviour
 
     public void Toggle()
     {
-        // camera focus
         if (fading) return;
-        if(paused)
+        if(talking)
         {
-            paused = false;
-            StartCoroutine(FadeOut());
+            if(shownMenu) StartCoroutine(FadeOut());
+            else StartCoroutine(FadeIn());
         }
         else
         {
+            if (paused)
+            {
+                paused = false;
+                StartCoroutine(FadeOut());
+            }
+            else
+            {
+                paused = true;
+                StartCoroutine(FadeIn());
+            }
+        }
+    }
+
+    public void TalkingPauseToggle()
+    {
+        if(talking)
+        {
+            talking = false;
+            paused = false;
+        }
+        else
+        {
+            talking = true;
             paused = true;
-            StartCoroutine(FadeIn());
+            shownMenu = false;
         }
     }
 
@@ -53,6 +77,7 @@ public class PauseMenu : MonoBehaviour
     {
         previousFocus = vCam.Follow;
         vCam.Follow = focusPoint;
+        if (talking) shownMenu = true;
         fading = true;
         LeanTween.moveLocalZ(titleTetx, 0, 0.6f);
         yield return new WaitForSeconds(0.1f);
@@ -63,7 +88,6 @@ public class PauseMenu : MonoBehaviour
         LeanTween.moveLocalZ(volumeSlider, 0, 0.6f);
         yield return new WaitForSeconds(0.1f);
         LeanTween.moveLocalZ(quitButton, 0, 0.6f);
-
         yield return new WaitForSeconds(0.6f);
         fading = false;
     }
@@ -80,5 +104,6 @@ public class PauseMenu : MonoBehaviour
         LeanTween.moveLocalZ(volumeSlider, 0.8f, 0);
         LeanTween.moveLocalZ(quitButton, 0.8f, 0);
         fading = false;
+        if (talking) shownMenu = false;
     }
 }

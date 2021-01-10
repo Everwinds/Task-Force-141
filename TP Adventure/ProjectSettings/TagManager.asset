@@ -8,6 +8,7 @@ TagManager:
   - Handle
   - 0
   - Hook
+  - Level Reference
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Player
   - Wall
   - Ground
-  - 
+  - Postprocessing
   - 
   - 
   - 
@@ -50,4 +51,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 517835871
+    locked: 0
+  - name: Overlay
+    uniqueID: 934555143
     locked: 0

@@ -2,58 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using Cinemachine;
 
+[RequireComponent(typeof(CanvasGroup))]
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
     public Typewritter typewritter;
-    public GameObject startButton;
-    public GameObject endButton;
-
+    public CinemachineVirtualCamera vCam;
+    private CanvasGroup canvasGroup;
     private Dialogue curDialogue;
+    private Transform preTarget;
     
     private void Awake()
     {
         Instance = this;
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    public void Open()
+    public void StartDialogue(Transform pos, Dialogue dialogue)
     {
-        if (!curDialogue) return;
-        GetComponent<Image>().enabled = true;
-        GetComponent<Button>().enabled = true;
-        typewritter.textBox.enabled = true;
+        if (curDialogue == dialogue) curDialogue.ResetDialogue();
+        else curDialogue = dialogue;
+        transform.position = pos.position;
+        PauseMenu.Instance.TalkingPauseToggle();
+
+        preTarget = vCam.Follow;
+        vCam.Follow = pos;
+        LeanTween.alphaCanvas(canvasGroup, 1f, 0.2f);
         PlayNextLine();
     }
 
-    public void Close()
+    public void EndDialogue()
     {
-        GetComponent<Image>().enabled = false;
-        GetComponent<Button>().enabled = false;
         typewritter.Stop();
-        typewritter.textBox.enabled = false;
-        if (curDialogue) curDialogue.Reset();
-        startButton.SetActive(true);
-        endButton.SetActive(false);
-    }
 
-    public void SetDialogue(Dialogue dialogue)
-    {
-        if (curDialogue) curDialogue.Reset();
-        curDialogue = dialogue;
-    }
+        PauseMenu.Instance.TalkingPauseToggle();
 
-    // Always set the first dialogue. For testing purpose
-    public void SetDialogue(NPC npc)
-    {
-        if (npc.dialogues[0])
-        {
-            SetDialogue(npc.dialogues[0]);
-            startButton.transform.GetChild(0).GetComponent<Text>().text = "和" + npc.name + "开始对话吧!";
-        }
+        vCam.Follow = preTarget;
+        preTarget = null;
+        LeanTween.alphaCanvas(canvasGroup, 0f, 0.2f);
+        if (curDialogue) curDialogue.ResetDialogue();
     }
-
+    
     public void PlayNextLine()
     {
         if (!curDialogue)
@@ -62,9 +53,8 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         if (!typewritter.isReady) return;
-        //textBox.text = curDialogue.GetLine();
         string line = curDialogue.GetLine();
         if(line!=null) typewritter.Write(line);
-        else Close();
+        else EndDialogue();
     }
 }

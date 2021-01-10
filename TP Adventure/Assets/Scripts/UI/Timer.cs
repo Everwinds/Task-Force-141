@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
 
     private Text text;
     private float timer;
+    private bool pause;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.Instance.paused || reached) return;
+        if (PauseMenu.Instance.paused || reached || pause) return;
         if(timer<=0)
         {
             reached = true;
@@ -30,9 +31,20 @@ public class Timer : MonoBehaviour
         timer -= Time.deltaTime;
     }
 
+    public void Pause()
+    {
+        pause = true;
+    }
+
+    public void Resume()
+    {
+        pause = false;
+    }
+
     public void ResetTimer()
     {
         timer = time;
+        text.text = timer.ToString("F1") + "s";
         reached = false;
     }
 }
