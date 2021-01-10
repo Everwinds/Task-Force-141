@@ -8,6 +8,7 @@ TagManager:
   - Handle
   - 0
   - 2
+  - Hook
   layers:
   - Default
   - TransparentFX
@@ -50,4 +51,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 517835871
+    locked: 0
+  - name: Overlay
+    uniqueID: 3400960933
     locked: 0
