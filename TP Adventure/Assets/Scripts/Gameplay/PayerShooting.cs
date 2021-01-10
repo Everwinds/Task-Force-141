@@ -57,7 +57,6 @@ public class PayerShooting : MonoBehaviour
             transform.position = points[i];
             yield return new WaitForFixedUpdate();
         }
-        print("Finished");
     }
 
     IEnumerator ShootForward(Transform hookPos)

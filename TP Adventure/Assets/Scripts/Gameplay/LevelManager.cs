@@ -17,11 +17,12 @@ public class LevelManager : MonoBehaviour
         if (col != null)
         {
             currentHovering = col.gameObject;
-            if (currentHovering.CompareTag("Hook"))
+            if (currentHovering.CompareTag("Hook") && !currentHovering.GetComponent<Hook>().used)
             {
                 currentHovering.SendMessage("OnHover");
                 if (Input.GetMouseButtonDown(1))
                 {
+                    currentHovering.SendMessage("Use");
                     shooting.SendMessage("OnHook", col.transform);
                     shootingClicked = true;
                 }

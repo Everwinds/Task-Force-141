@@ -1790,7 +1790,7 @@ TrailRenderer:
   m_SortingLayerID: 517835871
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Time: 1.5
+  m_Time: 1.3
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -1844,7 +1844,7 @@ TrailRenderer:
     textureMode: 1
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.15
   m_Autodestruct: 0
   m_Emitting: 1
 --- !u!1 &623428839
@@ -6532,7 +6532,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 58b23326465a5bd42b548227378fa21e, type: 3}
   - {fileID: 21300000, guid: 39db8521046cfff4c9c9900cde1809f0, type: 3}
   - {fileID: 21300000, guid: 58b23326465a5bd42b548227378fa21e, type: 3}
-  hovering: 0
+  used: 0
 --- !u!1 &1424688458
 GameObject:
   m_ObjectHideFlags: 0
@@ -8016,7 +8016,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 58b23326465a5bd42b548227378fa21e, type: 3}
   - {fileID: 21300000, guid: 39db8521046cfff4c9c9900cde1809f0, type: 3}
   - {fileID: 21300000, guid: 58b23326465a5bd42b548227378fa21e, type: 3}
-  hovering: 0
+  used: 0
 --- !u!58 &1918748685
 CircleCollider2D:
   m_ObjectHideFlags: 0
