@@ -23,7 +23,7 @@ public class TransitionText : MonoBehaviour
         canvasGroup.alpha = 0f;
         text.text = transitionTexts[level - 1];
         LeanTween.alphaCanvas(canvasGroup, 1f, 1f);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         LeanTween.alphaCanvas(canvasGroup, 0f, 1f);
         yield return new WaitForSeconds(1f);
         fading = false;

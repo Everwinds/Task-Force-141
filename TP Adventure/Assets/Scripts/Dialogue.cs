@@ -25,7 +25,7 @@ public class Dialogue : ScriptableObject
         else return null;
     }
 
-    public void Reset()
+    public void ResetDialogue()
     {
         pointer = 0;
     }

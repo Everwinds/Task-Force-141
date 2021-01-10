@@ -51,3 +51,6 @@ TagManager:
   - name: Foreground
     uniqueID: 517835871
     locked: 0
+  - name: Overlay
+    uniqueID: 934555143
+    locked: 0

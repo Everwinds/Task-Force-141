@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
         timer.Pause();
         timer.ResetTimer();
         // disable player control
-        LeanTween.move(levelReference, levelAnchorNex, 2f);
+        LeanTween.move(levelReference, levelAnchorNex, 3f);
         player.GetComponent<PlayerController>().enabled = false;
         player.GetComponent<Animator>().speed = 0;
         vCam.Follow = null;
@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
         
         curLevel++;
         LoadScene(curLevel+1);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         vCam.Follow = levelAnchorCur;
         player.transform.position = levelReference.transform.position;
         player.transform.SetParent(levelReference.transform);
@@ -82,7 +82,7 @@ public class LevelManager : MonoBehaviour
         {
             // move new level to center
             levelReference.transform.position = levelAnchorPre.position;
-            LeanTween.move(levelReference, levelAnchorCur, 4f);
+            LeanTween.move(levelReference, levelAnchorCur, 5f);
             StartCoroutine(OnTransitionComplete());
         }
         SceneManager.sceneLoaded -= OnSceneLoaded;
@@ -91,7 +91,7 @@ public class LevelManager : MonoBehaviour
     IEnumerator OnTransitionComplete()
     {
         // give back player control
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         player.transform.SetParent(null);
         vCam.Follow = player.transform;
         player.GetComponent<PlayerController>().enabled = true;
