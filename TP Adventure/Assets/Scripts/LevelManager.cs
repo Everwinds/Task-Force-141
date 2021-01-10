@@ -123,13 +123,16 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator ReloadLevelCoroutine()
     {
+        bool npcTalked = levelReference.GetComponent<Level>().npc.talked;
         LeanTween.alpha(curtain.GetComponent<RectTransform>(), 1f, 1f);
         yield return new WaitForSeconds(1f);
         SceneManager.UnloadSceneAsync(curLevel + 1);
         SceneManager.LoadSceneAsync(curLevel+1, LoadSceneMode.Additive);
         levelReference = GameObject.FindGameObjectWithTag("Level Reference");
+        levelReference.GetComponent<Level>().npc.talked = npcTalked;
         GetComponent<GameStateManager>().ResetGameState();
         timer.ResetTimer();
+        timer.Resume();
         playerTrail.enabled = false;
         player.transform.position = levelAnchorCur.position;
         playerTrail.enabled = true;

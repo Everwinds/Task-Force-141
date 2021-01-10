@@ -7,6 +7,9 @@ public class NPC : MonoBehaviour
 {
     public Dialogue[] dialogues;
     public GameObject talkingBubble;
+    public GameObject talkTrigger;
+    [HideInInspector]
+    public bool talked = false;
     private Animator animator;
 
     private void Start()
@@ -16,8 +19,7 @@ public class NPC : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T)) Talk();
-        if (Input.GetKeyDown(KeyCode.S)) StopTalk();
+
     }
 
     void Awake()
@@ -27,10 +29,12 @@ public class NPC : MonoBehaviour
 
     public void Talk()
     {
-        if (PauseMenu.Instance.paused) return;
+        if (PauseMenu.Instance.paused || talked) return;
         talkingBubble.SetActive(false);
+        talkTrigger.SetActive(false);
         DialogueManager.Instance.StartDialogue(transform, dialogues[0]);
         animator.SetTrigger("Talk");
+        talked = true;
     }
 
     public void StopTalk()

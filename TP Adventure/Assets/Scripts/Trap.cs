@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
+    [Header("Optional")]
+    public NPC TalkTriggerer;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameStateManager.Instance.Die();
+        if (TalkTriggerer == null) GameStateManager.Instance.Die();
+        else TalkTriggerer.Talk();
+
     }
 }

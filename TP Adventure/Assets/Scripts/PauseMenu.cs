@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject quitButton;
     public CinemachineVirtualCamera vCam;
     public Transform focusPoint;
+    public AudioSource BGM;
     [HideInInspector]
     public bool paused = false;
     public float volume = 1f;
@@ -112,5 +113,6 @@ public class PauseMenu : MonoBehaviour
     private void UpdateVolume()
     {
         volume = volumeSlider.value;
+        BGM.volume = volume;
     }
 }

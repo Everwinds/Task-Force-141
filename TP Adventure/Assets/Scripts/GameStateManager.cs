@@ -6,6 +6,9 @@ public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager Instance;
     public CanvasGroup dieCanvasGroup;
+    public Timer timer;
+    public GameObject player;
+    [HideInInspector]
     public bool die = false;
 
     private void Awake()
@@ -25,7 +28,9 @@ public class GameStateManager : MonoBehaviour
     public void Die()
     {
         LeanTween.alphaCanvas(dieCanvasGroup, 1f, 1f);
-        PauseMenu.Instance.paused = true;
+        //PauseMenu.Instance.paused = true;
+        timer.Pause();
+        player.GetComponent<Animator>().SetTrigger("Die");
         die = true;
     }
 

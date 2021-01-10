@@ -631,55 +631,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1095241451990561958, guid: ed72e7ca242384745aedc71aa3e8272e,
         type: 3}
-      propertyPath: dialogues.Array.data[0]
+      propertyPath: talkTrigger
       value: 
-      objectReference: {fileID: 11400000, guid: 59dd167b58d336a4b851eb5095745f98,
-        type: 2}
-    - target: {fileID: 1095241452863252997, guid: ed72e7ca242384745aedc71aa3e8272e,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095241452863252997, guid: ed72e7ca242384745aedc71aa3e8272e,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095241452863252997, guid: ed72e7ca242384745aedc71aa3e8272e,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 934555143
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095241452863253002, guid: ed72e7ca242384745aedc71aa3e8272e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095241452863253002, guid: ed72e7ca242384745aedc71aa3e8272e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095241452863253002, guid: ed72e7ca242384745aedc71aa3e8272e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095241452863253002, guid: ed72e7ca242384745aedc71aa3e8272e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 1547934895371188258, guid: ed72e7ca242384745aedc71aa3e8272e,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1547934895371188258, guid: ed72e7ca242384745aedc71aa3e8272e,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 517835871
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 599420506}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed72e7ca242384745aedc71aa3e8272e, type: 3}
 --- !u!4 &599420505 stripped
@@ -688,6 +642,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 599420504}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &599420506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 232839869214978815, guid: ed72e7ca242384745aedc71aa3e8272e,
+    type: 3}
+  m_PrefabInstance: {fileID: 599420504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &599420507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1095241451990561958, guid: ed72e7ca242384745aedc71aa3e8272e,
+    type: 3}
+  m_PrefabInstance: {fileID: 599420504}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95f624d1f354f04c86cc164f6221c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &618017321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5451,6 +5423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuAnchor: {fileID: 551028387}
+  clip: {fileID: 0}
+  npc: {fileID: 599420507}
 --- !u!4 &1824395001
 Transform:
   m_ObjectHideFlags: 0
