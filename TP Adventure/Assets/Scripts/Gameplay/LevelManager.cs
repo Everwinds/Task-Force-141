@@ -5,10 +5,13 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     Vector2 mousePos;
-    GameObject currentHovering = null;
-
-    public GameObject shooting;
+    GameObject currentHovering = null, shooting;
     bool shootingClicked;
+
+    void Awake()
+    {
+        shooting = GameObject.Find("Player");
+    }
 
     void Update()
     {
