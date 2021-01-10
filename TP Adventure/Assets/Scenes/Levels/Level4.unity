@@ -269,7 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 145877421}
   - component: {fileID: 145877422}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GameBound (2)
   m_TagString: 1
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 226824773}
   - component: {fileID: 226824774}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GameBound (4)
   m_TagString: 1
   m_Icon: {fileID: 0}
@@ -767,7 +767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 290993937}
   - component: {fileID: 290993938}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GameBound (1)
   m_TagString: 1
   m_Icon: {fileID: 0}
@@ -2158,7 +2158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 626562474}
   - component: {fileID: 626562475}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: GameBound
   m_TagString: 0
   m_Icon: {fileID: 0}
@@ -5955,7 +5955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1273667733}
   - component: {fileID: 1273667734}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GameBound (5)
   m_TagString: 1
   m_Icon: {fileID: 0}
@@ -6589,7 +6589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1779463896}
   - component: {fileID: 1779463897}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GameBound (3)
   m_TagString: 1
   m_Icon: {fileID: 0}

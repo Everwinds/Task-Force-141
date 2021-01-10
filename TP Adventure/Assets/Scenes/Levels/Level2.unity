@@ -1798,7 +1798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 574883022}
   - component: {fileID: 574883023}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Gamebound
   m_TagString: 0
   m_Icon: {fileID: 0}
@@ -4562,7 +4562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1370906229}
   - component: {fileID: 1370906230}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Gamebound (1)
   m_TagString: 1
   m_Icon: {fileID: 0}
@@ -9592,7 +9592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2060138680}
   - component: {fileID: 2060138681}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Gamebound (2)
   m_TagString: 1
   m_Icon: {fileID: 0}
