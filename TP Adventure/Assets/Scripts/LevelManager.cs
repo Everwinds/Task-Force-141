@@ -38,6 +38,8 @@ public class LevelManager : MonoBehaviour
         LeanTween.move(levelReference, levelAnchorNex, 3f);
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<Animator>().speed = 0;
+        player.GetComponentInChildren<TrailRenderer>().enabled = false;
+
         vCam.Follow = null;
         player.transform.SetParent(levelReference.transform);
         
@@ -96,6 +98,7 @@ public class LevelManager : MonoBehaviour
         vCam.Follow = player.transform;
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<Animator>().speed = 1;
+        player.GetComponentInChildren<TrailRenderer>().enabled = true;
         timer.Resume();
     }
 }
