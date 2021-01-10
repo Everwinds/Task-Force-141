@@ -17,11 +17,6 @@ public class NPC : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-
-    }
-
     void Awake()
     {
         dialogues[0].LoadDialogue();
@@ -41,5 +36,11 @@ public class NPC : MonoBehaviour
     {
         DialogueManager.Instance.EndDialogue();
         animator.SetTrigger("Stop");
+    }
+
+    public void DisableTalk()
+    {
+        talkingBubble.SetActive(false);
+        talkTrigger.SetActive(false);
     }
 }

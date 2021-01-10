@@ -70,17 +70,9 @@ public class LevelManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // find reference for new level
-        foreach (GameObject levelRef in GameObject.FindGameObjectsWithTag("Level Reference"))
-        {
-            if (levelRef.name == "Level " + curLevel)
-            {
-                levelReference = levelRef;
-                break;
-            }
-        }
-        if (levelReference == null) Debug.Log("shi wo bu hao");
-        if (pauseMenu == null) Debug.Log("shi pause menu bu hao");
-        if (levelReference.GetComponent<Level>().pauseMenuAnchor == null) Debug.Log("shi anchor bu hao");
+        FindLevelReference();
+        GetComponent<AudioSource>().clip = levelReference.GetComponent<Level>().clip;
+        GetComponent<AudioSource>().Play();
         pauseMenu.transform.position = levelReference.GetComponent<Level>().pauseMenuAnchor.position;
         if(curLevel!=1)
         {
@@ -128,14 +120,30 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.UnloadSceneAsync(curLevel + 1);
         SceneManager.LoadSceneAsync(curLevel+1, LoadSceneMode.Additive);
-        levelReference = GameObject.FindGameObjectWithTag("Level Reference");
-        levelReference.GetComponent<Level>().npc.talked = npcTalked;
         GetComponent<GameStateManager>().ResetGameState();
         timer.ResetTimer();
         timer.Resume();
         playerTrail.enabled = false;
         player.transform.position = levelAnchorCur.position;
         playerTrail.enabled = true;
+
+        yield return new WaitForSeconds(0.1f);
+        FindLevelReference();
+        levelReference.GetComponent<Level>().npc.talked = npcTalked;
+        if (npcTalked) levelReference.GetComponent<Level>().npc.DisableTalk();
+
         LeanTween.alpha(curtain.GetComponent<RectTransform>(), 0f, 1f);
+    }
+
+    private void FindLevelReference()
+    {
+        foreach (GameObject levelRef in GameObject.FindGameObjectsWithTag("Level Reference"))
+        {
+            if (levelRef.name == "Level " + curLevel)
+            {
+                levelReference = levelRef;
+                break;
+            }
+        }
     }
 }

@@ -5423,7 +5423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuAnchor: {fileID: 551028387}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 6b2075f8ea4c7d845b01e34f1b813ff2, type: 3}
   npc: {fileID: 599420507}
 --- !u!4 &1824395001
 Transform:

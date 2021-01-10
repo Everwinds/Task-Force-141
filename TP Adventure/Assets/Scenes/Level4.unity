@@ -1596,11 +1596,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 768059715}
     m_Modifications:
-    - target: {fileID: 1893845944407888002, guid: 11f4c2809616af34ba0eade20e8bc649,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1893845944407888003, guid: 11f4c2809616af34ba0eade20e8bc649,
         type: 3}
       propertyPath: m_RootOrder
@@ -1661,11 +1656,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC - Potato Chip
       objectReference: {fileID: 0}
-    - target: {fileID: 1893845945144266275, guid: 11f4c2809616af34ba0eade20e8bc649,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11f4c2809616af34ba0eade20e8bc649, type: 3}
 --- !u!4 &651173973 stripped
@@ -1716,7 +1706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuAnchor: {fileID: 642045719}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 6b2075f8ea4c7d845b01e34f1b813ff2, type: 3}
   npc: {fileID: 651173974}
 --- !u!4 &768059715
 Transform:
