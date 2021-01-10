@@ -6389,10 +6389,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8446040586252732607, guid: ac33010392fe2fe48b6382dc4868d3c4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8619809398744577493, guid: ac33010392fe2fe48b6382dc4868d3c4,
         type: 3}
       propertyPath: m_Name
       value: bg_new-03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619809398744577493, guid: ac33010392fe2fe48b6382dc4868d3c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac33010392fe2fe48b6382dc4868d3c4, type: 3}

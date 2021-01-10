@@ -394,6 +394,7 @@ MonoBehaviour:
   background: {fileID: 2002605344}
   curtain: {fileID: 281584043}
   button: {fileID: 483297883}
+  exitButton: {fileID: 630315145}
 --- !u!1 &267240427
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,7 +934,7 @@ GameObject:
   - component: {fileID: 630315148}
   - component: {fileID: 630315147}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -956,8 +957,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 851, y: -461}
-  m_SizeDelta: {x: 162.3418, y: 126.01163}
+  m_AnchoredPosition: {x: 841.7, y: -475}
+  m_SizeDelta: {x: 180.94385, y: 98.108795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630315147
 MonoBehaviour:
@@ -1687,10 +1688,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c844e358f6fcc1249b803f8f95e7ce11, type: 3}
-    m_FontSize: 66
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 5
     m_MaxSize: 66
     m_Alignment: 4
     m_AlignByGeometry: 0

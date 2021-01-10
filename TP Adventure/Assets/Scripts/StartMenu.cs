@@ -10,6 +10,7 @@ public class StartMenu : MonoBehaviour
     public GameObject background;
     public GameObject curtain;
     public GameObject button;
+    public GameObject exitButton;
 
     public void GameStart()
     {
@@ -25,6 +26,7 @@ public class StartMenu : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         mainCamera.SetActive(false);
         button.SetActive(false);
+        exitButton.SetActive(false);
         LeanTween.alpha(curtain.GetComponent<RectTransform>(), 0f, 1f);
         yield return new WaitForSeconds(1f);
         SceneManager.UnloadSceneAsync(0);
