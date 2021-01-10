@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -15,6 +14,25 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        SpriteRenderer[] spriteList = GameObject.FindObjectsOfType<SpriteRenderer>();
+        foreach (SpriteRenderer spr in spriteList)
+        {
+            short tagNum;
+            bool isParsable = Int16.TryParse(spr.tag, out tagNum);
+            if (isParsable && 
+                tagNum >= shooting.GetComponent<PlayerMovement>().currentLayer &&
+                Vector2.Distance(spr.transform.position, shooting.transform.position) < 1.8f &&
+                spr.sortingOrder >= shooting.GetComponent<SpriteRenderer>().sortingOrder)
+            {
+                spr.color = new Color(1, 1, 1, .5f);
+            }
+            else
+            {
+                spr.color = Color.white;
+            }
+        }
+
+
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Collider2D col = Physics2D.OverlapPoint(mousePos);
         if (col != null)
@@ -30,11 +48,25 @@ public class GameManager : MonoBehaviour
                     shootingClicked = true;
                 }
             }
-            //put other objects that need mouse clicking
+            
+            if (currentHovering.CompareTag("Handle"))
+            {
+                currentHovering.SendMessage("OnHover");
+                if (Input.GetMouseButtonDown(1))
+                {
+                    shooting.SendMessage("GoUp");
+                }
+            }
         }
         else if (currentHovering != null)
         {
             if (currentHovering.CompareTag("Hook"))
+            {
+                currentHovering.SendMessage("OnExit");
+                currentHovering = null;
+            }
+
+            if (currentHovering.CompareTag("Handle"))
             {
                 currentHovering.SendMessage("OnExit");
                 currentHovering = null;
