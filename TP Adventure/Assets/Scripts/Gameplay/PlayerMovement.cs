@@ -9,16 +9,18 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 2f;
     public int currentLayer = 0;
 
+    public GameObject roll;
+    public TrailRenderer trail;
     Rigidbody2D rb2d;
     Animator animator;
     Vector3 moveDir = Vector3.zero;
     bool movable = false;
-    int directionIndex = 1;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        trail = gameObject.GetComponentInChildren<TrailRenderer>();
     }
 
     private void Update()
@@ -30,7 +32,20 @@ public class PlayerMovement : MonoBehaviour
         }
         
         HandleMovement();
-        PlayerSkills.HandleCliming((Vector2)moveDir, ref currentLayer, this.transform);
+        if (Input.GetKeyDown(KeyCode.Space))
+            GoUp();
+
+        if (movable)
+        {
+            animator.speed = 1;
+            animator.SetFloat("X", moveDir.x);
+            animator.SetFloat("Y", moveDir.y);
+            animator.SetBool("Running", true);
+        }
+        else
+        {
+            animator.SetBool("Running", false);
+        }
     }
 
     private void FixedUpdate()
@@ -38,46 +53,7 @@ public class PlayerMovement : MonoBehaviour
         if (PauseMenu.Instance.paused) 
             return;
         if (movable)
-            Move();
-    }
-
-    private void Move()
-    {
-        rb2d.velocity = moveDir * speed;
-        animator.speed = 1;
-        int dir = 1;
-        if(moveDir.y > 0)
-        {
-            if (moveDir.x > 0) dir = 1;
-            else dir = 2;
-        }
-        else
-        {
-            if (moveDir.x < 0) dir = 3;
-            else dir = 4;
-        }
-        if(directionIndex != dir)
-        {
-            directionIndex = dir;
-            switch (dir)
-            {
-                case 1:
-                    animator.SetTrigger("UpRight");
-                    break;
-
-                case 2:
-                    animator.SetTrigger("UpLeft");
-                    break;
-
-                case 3:
-                    animator.SetTrigger("DownLeft");
-                    break;
-
-                case 4:
-                    animator.SetTrigger("DownRight");
-                    break;
-            }
-        }
+            rb2d.velocity = moveDir * speed;
     }
 
     private void HandleMovement()
@@ -91,8 +67,69 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             if (movable) movable = false;
-            //moveDir = Vector3.zero;
-            animator.speed = 0;
         }
+
+        animator.SetFloat("X", moveDir.x);
+        animator.SetFloat("Y", moveDir.y);
+    }
+
+    public void Jump()
+    {
+        animator.SetTrigger("Fly");
+    }
+
+    IEnumerator Climbing(int up)
+    {
+        animator.SetTrigger("Climb");
+        trail.enabled = false;
+        
+        GameObject r = Instantiate(roll, transform.position, Quaternion.identity);
+        r.GetComponent<RollUp>().Throw(up, moveDir);
+
+        yield return new WaitForSeconds(.8f);
+
+        for (int i = 0; i < 120; i++)
+        {
+            transform.position += Vector3.up * up * .02f;
+            yield return new WaitForSeconds(.01f);  
+        }
+        for (int i = 0; i < 20; i++)
+        {
+            transform.Translate(moveDir * .02f);
+            yield return new WaitForSeconds(.01f);  
+        }
+
+        GameObject[] currentLayerGrounds = GameObject.FindGameObjectsWithTag(currentLayer.ToString());
+        foreach (GameObject ground in currentLayerGrounds)
+            ground.layer = 9;
+
+        trail.enabled = true;
+        animator.SetTrigger("EndClimb");
+    }
+
+    private void GoUp()
+    {
+        int up = 0;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, moveDir, .4f);
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider.CompareTag("Handle"))
+            {
+                up = hit.transform.position.y > transform.position.y ? 1 : -1;
+                break;
+            }
+        }
+
+        if (up == 0)
+        return;
+
+        StartCoroutine("Climbing", up);
+
+        GameObject[] currentLayerWalls = GameObject.FindGameObjectsWithTag(currentLayer.ToString());
+        foreach (GameObject wall in currentLayerWalls)
+            wall.layer = 10;
+
+        currentLayer += up;
+        GetComponent<SpriteRenderer>().sortingOrder += up;
     }
 }
