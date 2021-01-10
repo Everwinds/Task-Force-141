@@ -1121,6 +1121,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1121192022059851519, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a7101cd1d449024bb8867d811b24c1d, type: 3}
 --- !u!4 &75041993 stripped
@@ -1562,6 +1567,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 1745184415709895336, guid: 17cd91c3455caf9459d2d8f8825c6135,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3714758237472648360, guid: 17cd91c3455caf9459d2d8f8825c6135,
         type: 3}
       propertyPath: m_RootOrder
@@ -1835,11 +1845,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.8387431, y: -5.493528}
+  - {x: -0.013298631, y: -5.9887943}
   - {x: -11.150505, y: 0.465235}
   - {x: -1.037071, y: 6.344448}
-  - {x: 9.027487, y: 0.47129488}
-  - {x: -0.8549714, y: -5.4493446}
+  - {x: 10.036364, y: -0.09734464}
+  - {x: -0.029527187, y: -5.962955}
 --- !u!1001 &633090556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4689,7 +4699,7 @@ PrefabInstance:
     - target: {fileID: 4059818783024081571, guid: 672fe7615b42ee94ca6e3eb8b6c1e6ad,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 672fe7615b42ee94ca6e3eb8b6c1e6ad, type: 3}
@@ -8475,7 +8485,7 @@ PrefabInstance:
     - target: {fileID: 4059818783024081571, guid: 672fe7615b42ee94ca6e3eb8b6c1e6ad,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 672fe7615b42ee94ca6e3eb8b6c1e6ad, type: 3}
