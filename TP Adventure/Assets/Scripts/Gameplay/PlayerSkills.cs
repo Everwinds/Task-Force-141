@@ -6,7 +6,7 @@ public static class PlayerSkills
 {
     public static void HandleCliming(Vector2 moveDirection, ref int currentLayer, Transform transform)
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             GoUp(moveDirection, ref currentLayer, transform);
         }
@@ -16,7 +16,7 @@ public static class PlayerSkills
     {
         int up = 0;
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, moveDirection, .4f);
-        Debug.DrawLine(transform.position, (Vector2)transform.position + moveDirection, Color.blue);
+        Debug.DrawLine(transform.position, (Vector2)transform.position + moveDirection * 2, Color.blue);
         foreach (RaycastHit2D hit in hits)
         {
             if (hit.collider.CompareTag("Handle"))

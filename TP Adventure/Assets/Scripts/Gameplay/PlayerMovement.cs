@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (GameStateManager.Instance.die) return;
         if (PauseMenu.Instance.paused)
         {
             animator.speed = 0;
@@ -35,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (PauseMenu.Instance.paused) 
+        if (PauseMenu.Instance.paused || GameStateManager.Instance.die) 
             return;
         if (movable)
             Move();
@@ -46,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         rb2d.velocity = moveDir * speed;
         animator.speed = 1;
         int dir = 1;
-        if(moveDir.y>0)
+        if(moveDir.y > 0)
         {
             if (moveDir.x > 0) dir = 1;
             else dir = 2;
@@ -56,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
             if (moveDir.x < 0) dir = 3;
             else dir = 4;
         }
-        if(directionIndex!=dir)
+        if(directionIndex != dir)
         {
             directionIndex = dir;
             switch (dir)
