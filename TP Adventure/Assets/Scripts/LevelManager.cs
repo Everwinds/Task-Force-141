@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        levelCount = SceneManager.sceneCountInBuildSettings-3;
+        levelCount = SceneManager.sceneCountInBuildSettings-2;
         LoadScene(curLevel+1);
     }
     
@@ -40,7 +40,11 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator NextLevel()
     {
-        if (curLevel == 6) ToWinScene();
+        if (curLevel == 6)
+        {
+            StartCoroutine(ToWinScene());
+            yield break;
+        }
         StartCoroutine(transitionText.FadeIn(curLevel));
         timer.Pause();
         // disable player control
@@ -63,14 +67,14 @@ public class LevelManager : MonoBehaviour
 
     public void LoadScene(int index)
     {
-        if (index >= levelCount) return;
+        if (index > levelCount) return;
         SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void UnloadScene(int index)
     {
-        if (index == 0 || index == levelCount-1) return;
+        if (index == 0 || index == levelCount) return;
         SceneManager.UnloadSceneAsync(index);
     }
 
@@ -163,8 +167,10 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void ToWinScene()
+    IEnumerator ToWinScene()
     {
+        LeanTween.alpha(curtain.GetComponent<RectTransform>(), 1f, 1f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadSceneAsync(8);
     }
 }
