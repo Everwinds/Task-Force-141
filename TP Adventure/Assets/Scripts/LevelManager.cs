@@ -10,10 +10,12 @@ public class LevelManager : MonoBehaviour
     public int levelCount;
     public GameObject levelReference = null;
     public GameObject player;
+    public TrailRenderer playerTrail;
     public CinemachineVirtualCamera vCam;
     public TransitionText transitionText;
     public Timer timer;
     public GameObject pauseMenu;
+    public GameObject curtain;
     public Transform levelAnchorPre;
     public Transform levelAnchorCur;
     public Transform levelAnchorNex;
@@ -100,5 +102,36 @@ public class LevelManager : MonoBehaviour
         player.GetComponent<Animator>().speed = 1;
         player.GetComponentInChildren<TrailRenderer>().enabled = true;
         timer.Resume();
+    }
+
+    public void ToMainMenu()
+    {
+        StartCoroutine(ToMainMenuCoroutine());
+    }
+
+    IEnumerator ToMainMenuCoroutine()
+    {
+        LeanTween.alpha(curtain.GetComponent<RectTransform>(), 1f, 1f);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadSceneAsync(0);
+    }
+
+    public void ReloadLevel()
+    {
+        StartCoroutine(ReloadLevelCoroutine());
+    }
+
+    IEnumerator ReloadLevelCoroutine()
+    {
+        LeanTween.alpha(curtain.GetComponent<RectTransform>(), 1f, 1f);
+        yield return new WaitForSeconds(1f);
+        SceneManager.UnloadSceneAsync(curLevel + 1);
+        SceneManager.LoadSceneAsync(curLevel+1, LoadSceneMode.Additive);
+        GetComponent<GameStateManager>().ResetGameState();
+        timer.ResetTimer();
+        playerTrail.enabled = false;
+        player.transform.position = levelAnchorCur.position;
+        playerTrail.enabled = true;
+        LeanTween.alpha(curtain.GetComponent<RectTransform>(), 0f, 1f);
     }
 }

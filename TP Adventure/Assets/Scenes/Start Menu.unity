@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0775793ac573ac242b654e009df0d657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 798584752}
+  mainCamera: {fileID: 798584752}
   background: {fileID: 2002605344}
   curtain: {fileID: 281584043}
   button: {fileID: 483297883}

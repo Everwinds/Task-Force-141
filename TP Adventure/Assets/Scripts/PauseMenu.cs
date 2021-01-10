@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Toggle()
     {
-        if (fading) return;
+        if (fading || GameStateManager.Instance.die) return;
         if(talking)
         {
             if(shownMenu) StartCoroutine(FadeOut());
