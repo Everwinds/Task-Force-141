@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1486,7 +1486,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435655969}
   m_LocalRotation: {x: 0.4022277, y: 0.32224345, z: -0.36336076, w: 0.7761063}
-  m_LocalPosition: {x: 0, y: 0, z: 0.42}
+  m_LocalPosition: {x: 0, y: 0, z: 0.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1406400799}
@@ -1500,7 +1500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 59.151, y: 23.917002, z: -36.469}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 6.59, y: -4.59}
+  m_AnchoredPosition: {x: 2.5, y: -1.25}
   m_SizeDelta: {x: 17.906662, y: 13.192635}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435655974
@@ -1518,11 +1518,12 @@ MonoBehaviour:
   titleTetx: {fileID: 1406400798}
   continueButton: {fileID: 1826257146}
   volumeText: {fileID: 1367749939}
-  volumeSlider: {fileID: 1419079054}
   quitButton: {fileID: 768836284}
+  volumeSlider: {fileID: 1419079056}
   vCam: {fileID: 437164410}
   focusPoint: {fileID: 1057869832}
   paused: 0
+  volume: 1
 --- !u!225 &435655975
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3781,7 +3782,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

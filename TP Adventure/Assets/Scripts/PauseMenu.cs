@@ -11,12 +11,13 @@ public class PauseMenu : MonoBehaviour
     public GameObject titleTetx;
     public GameObject continueButton;
     public GameObject volumeText;
-    public GameObject volumeSlider;
     public GameObject quitButton;
+    public Slider volumeSlider;
     public CinemachineVirtualCamera vCam;
     public Transform focusPoint;
     [HideInInspector]
     public bool paused = false;
+    public float volume;
 
     private CanvasGroup canvasGroup;
     private Transform previousFocus;
@@ -28,6 +29,7 @@ public class PauseMenu : MonoBehaviour
     {
         Instance = this;
         canvasGroup = GetComponent<CanvasGroup>();
+        volumeSlider.onValueChanged.AddListener(delegate { UpdateVolume(); });
     }
     
     void Update()
@@ -85,7 +87,7 @@ public class PauseMenu : MonoBehaviour
         LeanTween.moveLocalZ(continueButton, 0f, 0.6f);
         yield return new WaitForSeconds(0.1f);
         LeanTween.moveLocalZ(volumeText, 0, 0.6f);
-        LeanTween.moveLocalZ(volumeSlider, 0, 0.6f);
+        LeanTween.moveLocalZ(volumeSlider.gameObject, 0, 0.6f);
         yield return new WaitForSeconds(0.1f);
         LeanTween.moveLocalZ(quitButton, 0, 0.6f);
         yield return new WaitForSeconds(0.6f);
@@ -101,9 +103,14 @@ public class PauseMenu : MonoBehaviour
         LeanTween.moveLocalZ(titleTetx, 0.8f, 0);
         LeanTween.moveLocalZ(continueButton, 0.8f, 0);
         LeanTween.moveLocalZ(volumeText, 0.8f, 0);
-        LeanTween.moveLocalZ(volumeSlider, 0.8f, 0);
+        LeanTween.moveLocalZ(volumeSlider.gameObject, 0.8f, 0);
         LeanTween.moveLocalZ(quitButton, 0.8f, 0);
         fading = false;
         if (talking) shownMenu = false;
+    }
+
+    private void UpdateVolume()
+    {
+        volume = volumeSlider.value;
     }
 }
