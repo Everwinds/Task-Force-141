@@ -7,4 +7,6 @@ public class Level : MonoBehaviour
     public Transform pauseMenuAnchor;
     public AudioClip clip;
     public NPC npc;
+    public Color backgroundColor;
+    public int timeLimit;
 }

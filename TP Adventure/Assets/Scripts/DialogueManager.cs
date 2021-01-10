@@ -47,12 +47,7 @@ public class DialogueManager : MonoBehaviour
     
     public void PlayNextLine()
     {
-        if (!curDialogue)
-        {
-            Debug.LogError("curDialogue not set!");
-            return;
-        }
-        if (!typewritter.isReady) return;
+        if (!curDialogue || !typewritter.isReady) return;
         string line = curDialogue.GetLine();
         if(line!=null) typewritter.Write(line);
         else EndDialogue();

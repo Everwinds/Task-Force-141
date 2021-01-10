@@ -45,6 +45,11 @@ public class Timer : MonoBehaviour
         pause = false;
     }
 
+    public void SetTimeLimit(int timeLimit)
+    {
+        time = timeLimit;
+    }
+
     public void ResetTimer()
     {
         timer = time;

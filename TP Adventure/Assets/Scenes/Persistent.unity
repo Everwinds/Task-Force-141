@@ -1477,7 +1477,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.0267, y: 1.6697}
+  m_AnchoredPosition: {x: -1.03, y: 1.42}
   m_SizeDelta: {x: 3.3932471, y: 1.6675098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &979831844
@@ -1765,11 +1765,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2fbd81322dd9048870629b4df67b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curLevel: 1
-  levelCount: 5
   levelReference: {fileID: 0}
   player: {fileID: 596753506}
   playerTrail: {fileID: 1086212675}
+  mainCam: {fileID: 157794362}
   vCam: {fileID: 437164410}
   transitionText: {fileID: 1563449854}
   timer: {fileID: 665414235}
@@ -1778,6 +1777,8 @@ MonoBehaviour:
   levelAnchorPre: {fileID: 1923450396}
   levelAnchorCur: {fileID: 1581186109}
   levelAnchorNex: {fileID: 1840189488}
+  curLevel: 1
+  levelCount: 5
 --- !u!4 &1115050639
 Transform:
   m_ObjectHideFlags: 0
@@ -1822,7 +1823,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2486,10 +2487,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionTexts:
-  - "\u7EF5\u7F8A\u8DDF\uFF0C\u8A00\u53F6\u968F\u6307\u70B9\u8FF7\u6D25\u76FC\u4EBA\u5F52"
   - "\u5FC6\u53E4\u6614\uFF0C\u601D\u4ECA\u65E5\u7389\u77F3\u4FF1\u711A\u5FC3\u5DF2\u901D"
   - "\u8D1F\u771F\u4E66\uFF0C\u6500\u9AD8\u5CE6\u529F\u9042\u8EAB\u9000\u6210\u4E45\u8FDC"
   - "\u6C38\u751F\u9E1F\uFF0C\u9759\u8C27\u591C\u6168\u53F7\u5149\u901D\u556E\u9F20\u5207"
+  - "\u5FC6\u53E4\u6614\uFF0C\u601D\u4ECA\u65E5\u7389\u77F3\u4FF1\u711A\u5FC3\u5DF2\u901D"
+  - "\u7EF5\u7F8A\u8DDF\uFF0C\u8A00\u53F6\u968F\u6307\u70B9\u8FF7\u6D25\u76FC\u4EBA\u5F52"
   text: {fileID: 134214608}
 --- !u!225 &1563449855
 CanvasGroup:

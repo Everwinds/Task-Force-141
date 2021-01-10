@@ -6,11 +6,11 @@ using Cinemachine;
 
 public class LevelManager : MonoBehaviour
 {
-    public int curLevel = 1;
-    public int levelCount;
+    public static LevelManager Instance;
     public GameObject levelReference = null;
     public GameObject player;
     public TrailRenderer playerTrail;
+    public Camera mainCam;
     public CinemachineVirtualCamera vCam;
     public TransitionText transitionText;
     public Timer timer;
@@ -19,6 +19,13 @@ public class LevelManager : MonoBehaviour
     public Transform levelAnchorPre;
     public Transform levelAnchorCur;
     public Transform levelAnchorNex;
+    public int curLevel = 1;
+    public int levelCount;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -31,11 +38,10 @@ public class LevelManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L)) StartCoroutine(NextLevel());
     }
 
-    IEnumerator NextLevel()
+    public IEnumerator NextLevel()
     {
         StartCoroutine(transitionText.FadeIn(curLevel));
         timer.Pause();
-        timer.ResetTimer();
         // disable player control
         LeanTween.move(levelReference, levelAnchorNex, 3f);
         player.GetComponent<PlayerMovement>().enabled = false;
@@ -71,8 +77,17 @@ public class LevelManager : MonoBehaviour
     {
         // find reference for new level
         FindLevelReference();
-        GetComponent<AudioSource>().clip = levelReference.GetComponent<Level>().clip;
-        GetComponent<AudioSource>().Play();
+        // update info of new level
+        Level level = levelReference.GetComponent<Level>();
+        if(GetComponent<AudioSource>().clip!=level.clip)
+        {
+            GetComponent<AudioSource>().clip = level.clip;
+            GetComponent<AudioSource>().Play();
+        }
+        mainCam.backgroundColor = level.backgroundColor;
+        timer.SetTimeLimit(level.timeLimit);
+        timer.ResetTimer();
+
         pauseMenu.transform.position = levelReference.GetComponent<Level>().pauseMenuAnchor.position;
         if(curLevel!=1)
         {
@@ -88,7 +103,7 @@ public class LevelManager : MonoBehaviour
     {
         // give back player control
         yield return new WaitForSeconds(5f);
-        player.transform.SetParent(null);
+        player.transform.SetParent(transform);
         vCam.Follow = player.transform;
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<Animator>().speed = 1;

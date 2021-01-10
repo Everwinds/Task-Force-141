@@ -6,11 +6,13 @@ public class Trap : MonoBehaviour
 {
     [Header("Optional")]
     public NPC TalkTriggerer;
+    public bool WinTrigger = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (TalkTriggerer == null) GameStateManager.Instance.Die();
-        else TalkTriggerer.Talk();
+        if (TalkTriggerer != null) TalkTriggerer.Talk();
+        else if (WinTrigger) StartCoroutine(LevelManager.Instance.NextLevel());
+        else GameStateManager.Instance.Die();
 
     }
 }
