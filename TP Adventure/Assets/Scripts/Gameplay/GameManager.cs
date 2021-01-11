@@ -19,12 +19,13 @@ public class GameManager : MonoBehaviour
         {
             short tagNum;
             bool isParsable = Int16.TryParse(spr.tag, out tagNum);
-            if (isParsable && 
+            if (isParsable &&
                 tagNum >= shooting.GetComponent<PlayerMovement>().currentLayer &&
                 Vector2.Distance(spr.transform.position, shooting.transform.position) < 1.8f &&
                 spr.sortingOrder >= shooting.GetComponent<SpriteRenderer>().sortingOrder)
             {
                 spr.color = new Color(1, 1, 1, .5f);
+                SpriteRenderer sr;
             }
             else
             {

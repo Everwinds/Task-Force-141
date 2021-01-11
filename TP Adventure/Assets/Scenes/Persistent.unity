@@ -959,6 +959,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3741353111161464816, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741353111161464816, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741353111161464816, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741353112931763498, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741353112931763498, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741353112931763498, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4232011820003020422, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
         type: 3}
       propertyPath: speed

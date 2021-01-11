@@ -146,6 +146,7 @@ public class LevelManager : MonoBehaviour
         playerTrail.enabled = false;
         player.transform.position = levelAnchorCur.position;
         playerTrail.enabled = true;
+        player.GetComponent<Animator>().SetTrigger("Respawn");
 
         yield return new WaitForSeconds(0.1f);
         FindLevelReference();

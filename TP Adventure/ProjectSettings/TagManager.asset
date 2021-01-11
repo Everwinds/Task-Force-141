@@ -9,6 +9,8 @@ TagManager:
   - 0
   - 2
   - Hook
+  - 3
+  - Level Reference
   layers:
   - Default
   - TransparentFX
