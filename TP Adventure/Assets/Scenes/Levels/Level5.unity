@@ -303,6 +303,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 424337788595021749, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
         type: 3}
       propertyPath: m_RootOrder
@@ -610,6 +615,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf2 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 424337788595021749, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
         type: 3}
       propertyPath: m_RootOrder
@@ -778,6 +788,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shelf2 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 424337788595021749, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
         type: 3}
@@ -1973,6 +1988,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8917277172150400614, guid: 69f528bb8e4ae764fa8b4cc7cc13c613,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69f528bb8e4ae764fa8b4cc7cc13c613, type: 3}
 --- !u!4 &712565316 stripped
@@ -2058,6 +2078,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bg_new-01
       objectReference: {fileID: 0}
+    - target: {fileID: 3516716937867096093, guid: 672fe7615b42ee94ca6e3eb8b6c1e6ad,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 672fe7615b42ee94ca6e3eb8b6c1e6ad, type: 3}
 --- !u!4 &717629547 stripped
@@ -2131,6 +2156,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shelf2
+      objectReference: {fileID: 0}
+    - target: {fileID: 424337788595021749, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
         type: 3}
@@ -2401,6 +2431,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bg_new-01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516716937867096093, guid: 672fe7615b42ee94ca6e3eb8b6c1e6ad,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 672fe7615b42ee94ca6e3eb8b6c1e6ad, type: 3}
@@ -2692,6 +2727,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784802219345092491, guid: 4abc3c092683e004ebcf2388717216e2,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2818545240631866081, guid: 4abc3c092683e004ebcf2388717216e2,
         type: 3}
@@ -3406,6 +3446,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf2 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 424337788595021749, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
         type: 3}
       propertyPath: m_RootOrder
@@ -3652,6 +3697,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bg_new-04
+      objectReference: {fileID: 0}
+    - target: {fileID: 746201023615458476, guid: c05c6e5165b64804ca71b093218025ed,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1864468089165930413, guid: c05c6e5165b64804ca71b093218025ed,
         type: 3}
@@ -10655,6 +10705,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 424337788595021749, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
         type: 3}
       propertyPath: m_RootOrder
@@ -13351,6 +13406,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 03
       objectReference: {fileID: 0}
+    - target: {fileID: 4984821435567424677, guid: ba4ebb108ffa11844a6aeba2020456e5,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7756303592630847338, guid: ba4ebb108ffa11844a6aeba2020456e5,
         type: 3}
       propertyPath: m_RootOrder
@@ -13436,7 +13496,7 @@ GameObject:
   - component: {fileID: 82366183949608387}
   m_Layer: 0
   m_Name: Shelf01 (3)
-  m_TagString: Untagged
+  m_TagString: 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13638,7 +13698,7 @@ GameObject:
   - component: {fileID: 82366184592260035}
   m_Layer: 0
   m_Name: Shelf01 (1)
-  m_TagString: Untagged
+  m_TagString: 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13720,7 +13780,7 @@ GameObject:
   - component: {fileID: 82366184636580441}
   m_Layer: 0
   m_Name: Shelf01
-  m_TagString: Untagged
+  m_TagString: 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

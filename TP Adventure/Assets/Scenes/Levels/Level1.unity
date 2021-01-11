@@ -445,6 +445,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 424337788595021749, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
         type: 3}
       propertyPath: m_RootOrder
@@ -625,6 +630,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf2 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 424337788595021749, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
         type: 3}
       propertyPath: m_RootOrder
@@ -790,6 +800,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bg_new-04 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9186008547330942897, guid: 73bc4dd66135f5f40aadb50a5e30e0a9,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73bc4dd66135f5f40aadb50a5e30e0a9, type: 3}
 --- !u!4 &618017322 stripped
@@ -809,6 +824,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shelf2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 424337788595021749, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
         type: 3}
@@ -4035,6 +4055,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 424337788595021749, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
         type: 3}
       propertyPath: m_RootOrder
@@ -4661,6 +4686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shelf2 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 424337788595021749, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
         type: 3}
@@ -7620,6 +7650,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf2
       objectReference: {fileID: 0}
+    - target: {fileID: 424337788595021749, guid: 2a7101cd1d449024bb8867d811b24c1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 616342597066202178, guid: 2a7101cd1d449024bb8867d811b24c1d,
         type: 3}
       propertyPath: m_RootOrder
@@ -7785,7 +7820,7 @@ GameObject:
   - component: {fileID: 82366185460056041}
   m_Layer: 0
   m_Name: Shelf01
-  m_TagString: Untagged
+  m_TagString: 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
