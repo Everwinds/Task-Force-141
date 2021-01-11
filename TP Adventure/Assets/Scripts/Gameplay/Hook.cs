@@ -30,4 +30,9 @@ public class Hook : MonoBehaviour
     {
         used = true;
     }
+
+    public void UnUse()
+    {
+        used = false;
+    }
 }

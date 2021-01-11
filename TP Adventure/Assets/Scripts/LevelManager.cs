@@ -157,6 +157,10 @@ public class LevelManager : MonoBehaviour
         player.GetComponent<SpriteRenderer>().sortingOrder = 2;
         player.transform.GetChild(0).GetComponent<TrailRenderer>().sortingOrder = 2;
 
+        Hook[] hookList = GameObject.FindObjectsOfType<Hook>();
+        foreach(Hook h in hookList)
+            h.UnUse();
+
         yield return new WaitForSeconds(0.1f);
         FindLevelReference();
         levelReference.GetComponent<Level>().npc.talked = npcTalked;
