@@ -48,7 +48,6 @@ public class PayerShooting : MonoBehaviour
         StopCoroutine("ShootForward");
         StartCoroutine("ShootBack");
         StartCoroutine("Jump");
-        this.GetComponentInParent<PlayerMovement>().Jump();
     }
 
     IEnumerator Jump()
