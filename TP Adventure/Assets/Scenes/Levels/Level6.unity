@@ -14642,6 +14642,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5769280088365766253, guid: 3f46bb16d30b6cf42a74d7b8532de51f,
+        type: 3}
+      propertyPath: targetLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5769280088365766255, guid: 3f46bb16d30b6cf42a74d7b8532de51f,
         type: 3}
       propertyPath: m_Name
@@ -16739,6 +16744,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5769280088365766253, guid: 3f46bb16d30b6cf42a74d7b8532de51f,
+        type: 3}
+      propertyPath: targetLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5769280088365766255, guid: 3f46bb16d30b6cf42a74d7b8532de51f,
         type: 3}
       propertyPath: m_Name
@@ -17627,6 +17637,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769280088365766253, guid: 3f46bb16d30b6cf42a74d7b8532de51f,
+        type: 3}
+      propertyPath: targetLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5769280088365766255, guid: 3f46bb16d30b6cf42a74d7b8532de51f,
         type: 3}

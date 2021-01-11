@@ -155,7 +155,7 @@ public class LevelManager : MonoBehaviour
 
         player.GetComponent<PlayerMovement>().currentLayer = 0;
         player.GetComponent<SpriteRenderer>().sortingOrder = 2;
-        player.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 2;
+        player.transform.GetChild(0).GetComponent<TrailRenderer>().sortingOrder = 2;
 
         yield return new WaitForSeconds(0.1f);
         FindLevelReference();
