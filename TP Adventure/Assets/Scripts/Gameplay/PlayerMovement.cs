@@ -131,6 +131,15 @@ public class PlayerMovement : MonoBehaviour
             wall.layer = 10;
 
         currentLayer += up;
-        GetComponent<SpriteRenderer>().sortingOrder += up;
+        if (up == 1)
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = 4;
+            trail.sortingOrder = 4;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = 2;
+            trail.sortingOrder = 2;
+        }
     }
 }
