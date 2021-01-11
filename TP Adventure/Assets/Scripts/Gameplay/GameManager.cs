@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
                 currentHovering = null;
             }
 
-            if (currentHovering.CompareTag("Handle"))
+            if (currentHovering != null && currentHovering.CompareTag("Handle"))
             {
                 currentHovering.SendMessage("OnExit");
                 currentHovering = null;
