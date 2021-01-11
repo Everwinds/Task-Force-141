@@ -93,6 +93,11 @@ public class LevelManager : MonoBehaviour
         timer.SetTimeLimit(level.timeLimit);
         timer.ResetTimer();
 
+        player.GetComponent<PlayerMovement>().currentLayer = 0;
+        player.GetComponent<SpriteRenderer>().sortingOrder = 2;
+        player.transform.GetChild(0).GetComponent<TrailRenderer>().sortingOrder = 2;
+        PauseMenu.Instance.ResetVolume();
+
         pauseMenu.transform.position = levelReference.GetComponent<Level>().pauseMenuAnchor.position;
         if(curLevel!=1)
         {
@@ -147,6 +152,10 @@ public class LevelManager : MonoBehaviour
         player.transform.position = levelAnchorCur.position;
         playerTrail.enabled = true;
         player.GetComponent<Animator>().SetTrigger("Respawn");
+
+        player.GetComponent<PlayerMovement>().currentLayer = 0;
+        player.GetComponent<SpriteRenderer>().sortingOrder = 2;
+        player.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 2;
 
         yield return new WaitForSeconds(0.1f);
         FindLevelReference();

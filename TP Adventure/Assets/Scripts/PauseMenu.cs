@@ -115,4 +115,11 @@ public class PauseMenu : MonoBehaviour
         volume = volumeSlider.value;
         BGM.volume = volume;
     }
+
+    public void ResetVolume()
+    {
+        volume = 1f;
+        volumeSlider.value = 1f;
+        BGM.volume = volume;
+    }
 }
