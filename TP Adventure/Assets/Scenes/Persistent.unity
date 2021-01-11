@@ -421,7 +421,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &252949086
 GameObject:
@@ -674,8 +674,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 596753507}
-  m_Follow: {fileID: 596753507}
+  m_LookAt: {fileID: 596753508}
+  m_Follow: {fileID: 596753508}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 4
@@ -704,7 +704,7 @@ Transform:
   m_Children:
   - {fileID: 657711191}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &437164412
 MonoBehaviour:
@@ -1046,15 +1046,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cd9b4121d692004bb0f1ad9eea567e8, type: 3}
---- !u!1 &596753506 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4232011820003020442, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
+--- !u!96 &596753506 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 3741353111161464816, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
     type: 3}
   m_PrefabInstance: {fileID: 596753505}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &596753507 stripped
+--- !u!1 &596753507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3741353112931763508, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 596753505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &596753508 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4232011820003020441, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
+  m_CorrespondingSourceObject: {fileID: 3741353112931763511, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
     type: 3}
   m_PrefabInstance: {fileID: 596753505}
   m_PrefabAsset: {fileID: 0}
@@ -1733,12 +1739,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2.42, y: 0.05}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!96 &1086212675 stripped
-TrailRenderer:
-  m_CorrespondingSourceObject: {fileID: 4232011821756034142, guid: 8cd9b4121d692004bb0f1ad9eea567e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 596753505}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1115050637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,8 +1771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelReference: {fileID: 0}
-  player: {fileID: 596753506}
-  playerTrail: {fileID: 1086212675}
+  player: {fileID: 596753507}
+  playerTrail: {fileID: 596753506}
   mainCam: {fileID: 157794362}
   vCam: {fileID: 437164410}
   transitionText: {fileID: 1563449854}
@@ -1796,7 +1796,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1115050640
 MonoBehaviour:
@@ -1812,7 +1812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dieCanvasGroup: {fileID: 515595009}
   timer: {fileID: 665414235}
-  player: {fileID: 596753506}
+  player: {fileID: 596753507}
   die: 0
 --- !u!82 &1115050641
 AudioSource:
